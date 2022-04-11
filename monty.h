@@ -3,8 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
-#include <stddef.h>
+#include <unistd.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -36,6 +35,15 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int monty_main (void);
+int push(int n);
+int pall(void);
+int pint(void);
+int pop(void);
+int swap(void);
+int add(void);
+int nop(void);
+
+extern char **opcode_tokens;
+
 
 #endif
