@@ -4,10 +4,8 @@
  * (this will print the elements of our list) 
 */
 
-int pall(stack_t **stack, unsigned int line_number)
+int pall(stack_t **stack)
 {
-	stack_t *node;
-	instruction_t *opcode;
 	int count;
 
 	if (stack == NULL)
