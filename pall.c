@@ -4,17 +4,16 @@
  * (this will print the elements of our list) 
 */
 
-int pall(stack_t **stack)
+void pall(stack_t **stack, unsigned int line_number)
 {
-	int count;
+	stack_t *current = *stack;
 
+	(void) line_number;
 	if (stack == NULL)
-		return (0);
-	while ((*stack)->next != NULL)
+		return;
+	while(current)
 	{
-		printf("%d\n", (*stack)->n);
-		(*stack) = (*stack)->next;
+		printf("%d\n", current->n);
+		current = current->next;
 	}
-	printf("%d\n", (*stack)->n);
-	return (0);
 }
