@@ -10,35 +10,34 @@
 int main (int argc, char **argv)
 {
 	FILE *fd; /* the file we want to read */
-	char *buffer = malloc(1 * sizeof(char *));
+	char **buffer = malloc(1 * sizeof(char *));
 	ssize_t line_size = 0;
-	size_t bufsize = 1024;
+	size_t *bufsize = 1024;
 	char *opcode = malloc(5);
-	char **valid_opcodes = malloc(41);
 	unsigned int count = 0;
-
-valid_opcodes = {"push", "pall", "pint", "pop", "swap", "add", "nop", "nope"};
+	int line_number = 0;
+       
 	if (argc != 2) /* check that correct number of arguments was given */
 	{
 		printf("USAGE: monty file");
 		exit(EXIT_FAILURE);
 	}
-	fd = open(argv[1], O_RDONLY);
+	fd = fopen(argv[1], O_RDONLY);
 	if (fd == NULL)
 	{
 		printf("%s%s\n", "Error: Can't open file", argv[1]);
-		close(fd);
+		fclose(fd);
 		exit(EXIT_FAILURE);
 	}
-newline: while(linesize >= 0)
+newline: while(line_size >= 0)
 	{
-		linesize = getline(buffer, bufsize, fd);
+		line_size = getline(buffer, bufsize, fd);
 		opcode = strtok(buffer, " ");
 		for (count = 0; count < 7; count++)
 		{
 			if (strcmp (opcode, valid_opcodes[count]) = 0)
 			{
-				void executor(opcode);
+				executor(opcode);
 				goto newline;
 			}
 		}
