@@ -1,1 +1,1 @@
-markdown
+The stack is really just a doubly linked list, this project will take a monty file provided by the user, and interpret the opcodes in that file, to manipulate the list in various ways (see our tasks). the functions themselves will be easy in my opinion, we need to build a really good interpreter. 
