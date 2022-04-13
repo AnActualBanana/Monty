@@ -1,20 +1,21 @@
 #include "monty.h"
 
-void executor(stack_t **stack, char *rdr, unsignedint lncnt)
+void executor(stack_t **stack, char *rdr, unsigned int lncnt)
 {
 	int x;
-	instruction_t function[] = VALIDOPS
+	instruction_t function[] = VALIDOPS;
 	
-	if (cmd == NULL)
+	if (rdr == NULL)
 		return;
-	for (x = o; function[x].opcode; x++)
-	
-	if(strcmp(function[x].opcodes, rdr) == 0
+	for (x = 0; function[x].opcode; x++)
+	{
+		if (strcmp(function[x].opcode, rdr) == 0)
 	   {
-		   funciton[x].f(stack,lncnt);
+		   function[x].f(stack,lncnt);
 		   return;
 	   }
-	   fprintf(stderr, "L%d: unknown instructions %s\n, lncn, rdr")
-	   arg = "error"
+	}
+	fprintf(stderr, "L%d: unknown instructions %s\n", lncnt, rdr);
+	arg = "error";
 	return;
 }
