@@ -17,7 +17,8 @@ int main(int argc, char **argv)
 	char *opcode = malloc(5);
 	int line_number = 0;
 	stack_t **stack = malloc(sizeof(stack_t));
-	
+	char *pushnum = malloc(5);
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -34,6 +35,7 @@ int main(int argc, char **argv)
 	{
 		line_size = getline(buffer, bufsize, fd);
 		opcode = strtok(*buffer, " ");
+		if (opcode = "push"
 		(void)executor(stack, opcode, line_number);
 	}
 	fclose(fd);
