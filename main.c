@@ -46,4 +46,5 @@ line_size = getline(&buffer, &buffsize, fd);
 	}
 	free(buffer),  fclose(fd), exit(exitstatus);
 }
+exit(exitstatus);
 }
