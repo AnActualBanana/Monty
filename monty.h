@@ -59,22 +59,5 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
-<<<<<<< HEAD
 void executor(stack_t **stack, char *cmd, unsigned int lncnt);
-=======
-
-#define VALIDOPS[8] {\
-{"push", push},\
-{"pall", pall},\
-{"pint", pint}\
-{"pop", pop},\
-{"swap", swap},\
-{"add", add},\
-{"nop", nop},\
-{NULL, NULL},\
-}
-
-char *arg;
->>>>>>> add807c8c6a78ab988f7717492e603c259c69e25
-
 #endif
