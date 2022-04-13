@@ -12,38 +12,38 @@ int main (int argc, char **argv)
 	FILE *fd; /* the file we want to read */
 	char **buffer = malloc(1 * sizeof(char *));
 	ssize_t line_size = 0;
-	size_t *bufsize = 1024;
+	size_t *bufsize = (size_t *)1024;
 	char *opcode = malloc(5);
 	unsigned int count = 0;
 	int line_number = 0;
-       
+	char *valid_opcodes[8];
 	if (argc != 2) /* check that correct number of arguments was given */
 	{
-		printf("USAGE: monty file");
+		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	fd = fopen(argv[1], O_RDONLY);
 	if (fd == NULL)
 	{
-		printf("%s%s\n", "Error: Can't open file", argv[1]);
+		printf("%s%s\n", "Error: Can't open file ", argv[1]);
 		fclose(fd);
 		exit(EXIT_FAILURE);
 	}
 newline: while(line_size >= 0)
 	{
+		line_number++;
 		line_size = getline(buffer, bufsize, fd);
-		opcode = strtok(buffer, " ");
+		opcode = strtok(*buffer, " ");
 		for (count = 0; count < 7; count++)
 		{
-			if (strcmp (opcode, valid_opcodes[count]) = 0)
+			if (strcmp (opcode, valid_opcodes[count]) == 0)
 			{
-				executor(opcode);
+				(void)executor(opcode);
 				goto newline;
 			}
 		}
 		if (opcode == "nope")
-		     printf("L%d: unknown instruction %s", line_number, opcode);
-	line_number++;
+		   printf("L%d: unknown instruction %s\n", line_number, opcode);
 }
 	return (0);
 }
