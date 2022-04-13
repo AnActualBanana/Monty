@@ -1,2 +1,21 @@
 #include "monty.h"
-/* this function will print the value at  the top of the stack (basically, travel to the end of the list, and print that last value. */
+
+
+
+void pint(stack_t **stack, unsigned int line_number)
+{
+  stack_t *current;
+  
+  current = *stack;
+  if (current)
+  {
+    printf("%d\n", ccurrent->n);
+    return;
+  }
+    else
+    {
+    fprintf(stderr, "L%d: can't pint, stack empty\n", line_numer);
+    arg = "error";
+    return;
+    }
+}
