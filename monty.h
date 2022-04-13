@@ -47,7 +47,7 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
-#define OPCODES{\
+#define VALIDOPS{\
 {"push", push},\
 {"pall", pall},\
 {"pop", pop},\
