@@ -1,5 +1,33 @@
 #include "monty.h"
-/* this function adds the top two elements of the stack (travel to the end, grab the value (tmp1), go back one node,
- * grab the value (tmp2), add the values together, insert that value at the second-to-last node, go forward to
- * the last node, remove that node.
- * at the end: (the top element of the stack contains the result, and the stack is one element shorter) */
+
+
+void add(stack_t **stack, unsigned int line_number)
+{
+  stack_t *current = NULL;
+  int x;
+  int y;
+  
+  if(!*stack)
+  {
+    fprintf(stderr, "L%d: can't add,stack too short\n", line_number);
+    arg = "error";
+    return;
+  }
+  
+  current = *stack;
+  x = current->n;
+  current = current->prev;
+  if(!current)
+  {
+    fprintf(stderr, "L%d: cant add, stack too short\n", line_number);
+    arg = "error";
+    return;
+  }
+  
+  y = current->n;
+  current->n = (x+y)'
+    *stack = current;
+  current = current->next;
+  free(current);
+  return;
+}
