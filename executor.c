@@ -1,7 +1,16 @@
-void getfunction(stack_t **stack, char *cmd, unsigned int lncnt)
+#include "monty.h"
+/**
+ * getfunction - finds a match for the provided command and associates it
+ *               with a function name.
+ * @stack: Pointer to the stack
+ * @cmd: The current token from main
+ * @lncnt: The current line count
+ * Return: the approprate function, or NULL if not found
+ */
+void executor(stack_t **stack, char *cmd, unsigned int lncnt)
 {
 	int x;
-	instruction_t function[] = VALIDOPS;
+	instruction_t function[] = CODES;
 
 	if (cmd == NULL)
 		return;
