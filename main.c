@@ -15,10 +15,9 @@ int main(int argc, char **argv)
 	ssize_t line_size = 0;
 	size_t *bufsize = (size_t *)1024;
 	char *opcode = malloc(5);
-	unsigned int count = 0;
 	int line_number = 0;
-	char *valid_opcodes[7];
-
+	stack_t **stack = malloc(sizeof(stack_t));
+	
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -35,7 +34,7 @@ int main(int argc, char **argv)
 	{
 		line_size = getline(buffer, bufsize, fd);
 		opcode = strtok(*buffer, " ");
-		(void)executor(opcode);
+		(void)executor(stack, opcode, line_number);
 	}
 	fclose(fd);
 	free(buffer);

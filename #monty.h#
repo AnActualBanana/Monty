@@ -47,10 +47,9 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
-#define VALIDOPS[8] {\
+#define VALIDOPS {\
 {"push", push},\
 {"pall", pall},\
-{"pint", pint}\
 {"pop", pop},\
 {"swap", swap},\
 {"add", add},\
