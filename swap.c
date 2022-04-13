@@ -1,4 +1,22 @@
 #include "monty.h"
-/* this function will swap the top two elements of the stack 
- * (basically, it will travel to the end of the list, store the value (tmp1), go back one node, store its value (tmp2),
- * put the value (tmp1) in that second-last spot, go forward to the end of list, put (tmp2) in that spot. */
+
+
+void swap(stack_t **stack, unsigned int line_number);
+{
+  int x;
+  int y;
+  stack_t *current;
+  
+  if (!*stack)
+  {
+    fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+    arg = "error";
+    return;
+  }
+  y = current->n;
+  current->n = x;
+  current = current->next;
+  current->n = y;
+  current->n = y;
+  return;
+}
