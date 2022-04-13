@@ -1,3 +1,21 @@
 #include "monty.h"
-/* this function will remove the top element of the stack.
- * (basically, travel to the last node of the list, delete it.) */
+
+
+void pop(stack_t **stack, unsigned int line_numer)
+{
+  stack_t *current = NULL;
+  
+  if(!*stack)
+  {
+      fprintf(stderr, "L%d: cant pop an empty stack\n", line_number);
+      arg = "error"
+      return;
+  }
+  current = (*stack)->prev;
+  free(*stack);
+  *stack = current;
+  if(!*stack)
+    return;
+  (*stack->next = NULL;
+   return;
+  }:
