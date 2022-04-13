@@ -25,8 +25,8 @@ void add(stack_t **stack, unsigned int line_number)
   }
   
   y = current->n;
-  current->n = (x+y)'
-    *stack = current;
+  current->n = (x+y);
+  *stack = current;
   current = current->next;
   free(current);
   return;
