@@ -10,14 +10,13 @@
 
 int main(int argc, char **argv)
 {
-	FILE *fd = NULL;
-	char **buffer = malloc(1 * sizeof(char *));
+	FILE *fd;
 	ssize_t line_size = 0;
-	size_t *bufsize = (size_t *)1024;
-	char *opcode = malloc(5);
-	int line_number = 0;
-	stack_t **stack = malloc(sizeof(stack_t));
-	char *pushnum = malloc(5);
+	size_t buffsize = 1024;
+	char *buffer = malloc(buffsize * sizeof(char));
+	char *cmnd = NULL;
+	stack_t *stack = NULL;
+	int exitstatus = EXIT_SUCCESS, linecount = 1;
 
 	if (argc != 2)
 	{
@@ -28,18 +27,25 @@ int main(int argc, char **argv)
 	if (fd == NULL)
 	{
 		fprintf(stderr, "%s%s\n", "Error: Can't open file ", argv[1]);
-		fclose(fd);
 		exit(EXIT_FAILURE);
 	}
-	for (; line_size >= 0; line_number++)
+line_size = getline(&buffer, &buffsize, fd);
+	while (line_size >= 0)
 	{
-		line_size = getline(buffer, bufsize, fd);
-		opcode = strtok(*buffer, " ");
-		if (opcode = "push"
-		(void)executor(stack, opcode, line_number);
+		cmnd = strtok(buffer, " \t\n\r");
+		arg = strtok(NULL, " \t\n\r");
+		if (arg == NULL)
+			arg = "notdigit";
+		executor(&stack, cmnd, linecount);
+		if (strcmp(arg, "error") == 0)
+		{
+			exitstatus = EXIT_FAILURE;
+			break;
+		}
+		line_size = getline(&buffer, &buffsize, fd);
+		linecount++;
 	}
-	fclose(fd);
-	free(buffer);
-	free(opcode);
-	return (0);
+	free(buffer),  fclose(fd), exit(exitstatus);
+}
+exit(exitstatus);
 }
