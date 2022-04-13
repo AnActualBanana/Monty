@@ -48,13 +48,13 @@ void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
 #define OPCODES{\
-{"push", push}\
-{"pall", pall}\
-{"pop", pop}\
-{"swap", swap}\
-{"add", add}\
-{"nop", nop}\
-{NULL, NULL}\
+{"push", push},\
+{"pall", pall},\
+{"pop", pop},\
+{"swap", swap},\
+{"add", add},\
+{"nop", nop},\
+{NULL, NULL},\
 }
 
 
