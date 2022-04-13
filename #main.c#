@@ -18,12 +18,7 @@ int main(int argc, char **argv)
 	int line_number = 0;
 	stack_t **stack = malloc(sizeof(stack_t));
 	
-	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-	fd = fopen(argv[1], "r");
+	");
 	if (fd == NULL)
 	{
 		fprintf(stderr, "%s%s\n", "Error: Can't open file ", argv[1]);

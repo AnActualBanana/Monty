@@ -18,7 +18,7 @@ void executor(stack_t **stack, char *cmd, unsigned int lncnt)
 	{
 		if (strcmp(function[x].opcode, cmd) == 0)
 		{
-			(void)function[x].f(stack, lncnt);
+			function[x].f(stack, lncnt);
 			return;
 		}
 	}
