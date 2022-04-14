@@ -22,7 +22,8 @@ int main(int argc, char **argv)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
-		fd = fopen(argv[1], "r");
+	}
+	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
 		fprintf(stderr, "%s%s\n", "Error: Can't open file ", argv[1]);
@@ -45,6 +46,5 @@ int main(int argc, char **argv)
 	linecount++;
 	}
 	free(buffer), free_stack(&stack),  fclose(fd), exit(exitstatus);
-}
 exit(exitstatus);
 }
