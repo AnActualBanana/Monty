@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
-	fprintf(stderr, "%s%s\n", "Error: Can't open file ", (char *)argv[1]);
+	fprintf(stderr, "%s%s\n", "Error: Can't open file ", argv[1]);
 	exit(EXIT_FAILURE);
 	}
 	line_size = getline(&buffer, &buffsize, fd);
