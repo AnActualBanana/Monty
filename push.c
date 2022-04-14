@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * push - adds a node to the stack
- * Pointer to the stack
+ * @stack: Pointer to the stack
  * @line_number: The line count from main
  */
 void push(stack_t **stack, unsigned int line_number)
