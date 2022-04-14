@@ -8,7 +8,13 @@
 
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *current;
+	stack_t *current = malloc(1 * sizeof(stack_t));
+	if (!current)
+	{
+		free(current);
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
 	(void) line_number;
 	if (stack)
 	{
@@ -16,8 +22,7 @@ void pall(stack_t **stack, unsigned int line_number)
 		while (current)
 	{
 		printf("%d\n", current->n);
-		current = current->prev;
+		current = current->next;
 	}
 	}
-return;
 }

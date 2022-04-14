@@ -4,6 +4,7 @@
  * @stack: Pointer to the stack
  * @line_number: The line count from main
  */
+
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *newnode = malloc(sizeof(stack_t));
@@ -14,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 		free(newnode);
 		fprintf(stderr, "Error: malloc failed\n");
 		arg = "error";
-		return;
+		exit(EXIT_FAILURE);
 	}
 	while (*arg)
 	{
@@ -22,18 +23,17 @@ void push(stack_t **stack, unsigned int line_number)
 			arg++;
 		if (isdigit(*arg) == 0)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			arg = "error";
-			free(newnode);
-			return;
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		arg = "error";
+		free(newnode);
+		exit(EXIT_FAILURE);
 		}
 		arg++;
 	}
 	newnode->n = y;
-	newnode->next = NULL;
-	newnode->prev = *stack;
+	newnode->next = *stack;
+	newnode->prev = NULL;
 	if (*stack)
-	(*stack)->next = newnode;
+	(*stack)->prev = newnode;
 	*stack = newnode;
-return;
 }
