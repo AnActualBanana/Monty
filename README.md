@@ -14,7 +14,7 @@ Monty is an interpreter for Monty ByteCode files. It processes opcodes in a file
 ## Installation
 Clone the repository:
 ```sh
-git clone https://github.com/AnActualBanana/monty.git
+git clone https://github.com/AnActualBanana/Monty.git
 cd monty
 ```
 
