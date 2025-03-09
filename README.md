@@ -14,7 +14,7 @@ Monty is an interpreter for Monty ByteCode files. It processes opcodes in a file
 ## Installation
 Clone the repository:
 ```sh
-git clone https://github.com/yourusername/monty.git
+git clone https://github.com/AnActualBanana/monty.git
 cd monty
 ```
 
@@ -66,9 +66,5 @@ Output:
 | `swap.c` | Handles swap operations |
 | `free_stack.c` | Frees allocated memory |
 
-## Author
-[Your Name](https://github.com/yourusername)
-
-## License
-This project is open-source and available under the [MIT License](LICENSE).
-
+## Authors
+[Logan McClain, Sam Townsend](https://github.com/AnActualBanana , https://github.com/SamuelTownsend)
